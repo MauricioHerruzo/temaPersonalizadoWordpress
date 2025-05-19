@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+/*
+Theme Name: Zooeag
+Theme URI: https://www.escuelaartegranada.com/
+Author: Fran Morales
+Author URI: https://www.escuelaartegranada.com/
+Description: Tema personanizalado para Zoo EAG realizado por los alomunos de CDTW
+Version: 1.0
+License: GNU General Public License v2 or later
+Lincense URI: http://www.gnu.org/license/gpl-2.0.html
+Text Domain: zooeag
+Tags: Responsive, Html, Css, Zoo, Eag, Animales
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Estilos generales del header */
+.site-header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo img {
+    max-height: 60px;
+    width: auto;
+}
+
+/* Menú principal desktop */
+.main-navigation ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-navigation li {
+    margin-left: 2rem;
+    position: relative;
+}
+
+.main-navigation a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-navigation a:hover {
+    color: #0073aa;
+}
+
+/* Menú hamburguesa (mobile) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.hamburger {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #333;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.hamburger:before,
+.hamburger:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    left: 0;
+    transition: all 0.3s;
+}
+
+.hamburger:before {
+    top: -8px;
+}
+
+.hamburger:after {
+    bottom: -8px;
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .main-navigation {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: #fff;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        transition: right 0.3s;
+        padding-top: 80px;
+    }
+    
+    .main-navigation.active {
+        right: 0;
+    }
+    
+    .main-navigation ul {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .main-navigation li {
+        margin: 0 0 1rem 0;
+    }
+    
+    /* Animación hamburguesa a X */
+    .menu-toggle.active .hamburger {
+        background: transparent;
+    }
+    
+    .menu-toggle.active .hamburger:before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+    
+    .menu-toggle.active .hamburger:after {
+        transform: rotate(-45deg);
+        bottom: 0;
+    }
+}
