@@ -3,7 +3,11 @@
 <?php 
     while(have_posts()): the_post();
 
-        get_template_part('template-parts/content','page');
+        if(is_page('Sobre Nosotros')):
+            get_template_part('template-parts/content','Sobre Nosotros');
+        else :
+            get_template_part('template-parts/content','page');
+        endif;
 
     endwhile;
 ?>
