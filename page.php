@@ -4,7 +4,7 @@
     while(have_posts()): the_post();
 
         if(is_page('Sobre Nosotros')):
-            get_template_part('template-parts/content','Sobre Nosotros');
+            get_template_part('template-parts/content','Nosotros');
         else :
             get_template_part('template-parts/content','page');
         endif;
