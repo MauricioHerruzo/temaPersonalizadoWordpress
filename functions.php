@@ -4,8 +4,13 @@ function zoo_styles(){
     wp_enqueue_style(
         'zoo-main-style',
         get_template_directory_uri()."/style.css",
-        array(),
+        array('bootstrap'),
         '1.0'
+    );
+    //cargar bootstrap
+    wp_enqueue_style(
+        'bootstrap',
+        'https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"'
     );
 }
 add_action('wp_enqueue_scripts', 'zoo_styles');
